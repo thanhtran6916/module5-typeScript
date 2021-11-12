@@ -38,4 +38,20 @@ for (let number of numbers) {
 }
 let rectangle = new rectangle_1.Rectangle(2, 2, 3, 3);
 console.log(rectangle.area());
+let money = 10000;
+let buyCar = (car) => {
+    return new Promise((success, fail) => {
+        if (money > 10000) {
+            success("car" + car);
+        }
+        else {
+            fail("not Buy");
+        }
+    });
+};
+let promise = buyCar("vinfast").then((value) => {
+    console.log(value);
+}).catch((message) => {
+    console.log(message);
+});
 //# sourceMappingURL=main.js.map

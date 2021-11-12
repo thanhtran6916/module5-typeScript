@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+var rectangle_1 = require("./rectangle");
 var width = 5;
 var height = 10;
 var area = width * height;
@@ -34,3 +37,21 @@ for (var _i = 0, numbers_1 = numbers; _i < numbers_1.length; _i++) {
         console.log(number);
     }
 }
+var rectangle = new rectangle_1.Rectangle(2, 2, 3, 3);
+console.log(rectangle.area());
+var money = 10000;
+var buyCar = function (car) {
+    return new Promise(function (success, fail) {
+        if (money > 10000) {
+            success("car" + car);
+        }
+        else {
+            fail("not Buy");
+        }
+    });
+};
+var promise = buyCar("vinfast").then(function (value) {
+    console.log(value);
+}, function (error) {
+    console.log(error);
+});

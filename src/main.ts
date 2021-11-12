@@ -40,3 +40,21 @@ for (let number of numbers) {
 
 let rectangle = new Rectangle(2, 2, 3, 3);
 console.log(rectangle.area());
+
+let money = 10000;
+
+let buyCar = (car: any) => {
+    return new Promise((success, fail) => {
+        if (money > 10000) {
+            success("car" + car);
+        } else if (money == 10000) {
+            fail("not Buy");
+        }
+    })
+}
+
+let promise = buyCar("vinfast").then((value) => {
+    console.log(value);
+}, (error) => {
+    console.log(error);
+})
